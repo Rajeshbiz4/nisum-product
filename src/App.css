@@ -10,7 +10,6 @@
 .App-header {
   color: white; background-color: #0a66ef;
   height: 50px;
-  padding: 10px;
   color: white;
 
 }
@@ -100,7 +99,6 @@
 }
 .header-container {
   display: flex;
-  padding-left: 10%;
 }
 input {
   width: 94%;
@@ -119,4 +117,68 @@ body {
   background: #fff;
   width: 74.45%;
   margin-left: 9%;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* { box-sizing: border-box; }
+
+body { 
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+	padding: 5px;
+	width: 95%;
+	margin: 20px auto;
+}
+header {
+	padding: 0 15px;
+}
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 5px 0;
+}
+
+.column {
+	flex: 1;
+	border: 1px solid gray;
+	margin: 10px;
+	padding: 10px;
+}
+.column:first-child { margin-left: 0; } 
+.column:last-child { margin-right: 0; }
+
+@media screen and (max-width: 980px) {
+  .columns .column {
+		margin-bottom: 5px;
+    flex-basis: 40%;
+		/* &:nth-last-child(2) {
+			margin-right: 0;
+		}
+		&:last-child {
+			flex-basis: 100%;
+			margin: 0;
+		} */
+  }
+  .column:nth-last-child(2) {
+    margin-right: 0;
+  }
+  .column:last-child {
+    flex-basis: 100%;
+    margin: 0;
+  }  
+}
+
+@media screen and (max-width: 680px) {
+	.columns .column {
+		flex-basis: 100%;
+		margin: 0 0 5px 0;
+	}
 }

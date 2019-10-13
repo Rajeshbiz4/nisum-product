@@ -24,7 +24,7 @@ export const fetchProductAction = payload => ({
   payload
 })
 
-const geneSuccess = payload => ({
+const productsSuccess = payload => ({
   type: PRODUCTS_SUCCESS,
   payload
 })
@@ -32,7 +32,7 @@ const geneSuccess = payload => ({
 export const productEpic = action$ => action$
   .ofType(PRODUCTS)
   .mergeMap(action => staticAjax(apiCallFetch(`https://www.westelm.com/services/catalog/v4/category/shop/new/all-new/index.json`, 'GET'))
-    .map(response => geneSuccess(response))
+    .map(response => productsSuccess(response))
     .catch(error => Observable.of({
       type: PRODUCTS_FAILURE,
       payload: error
