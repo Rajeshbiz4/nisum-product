@@ -20,7 +20,7 @@ export function apiCall (url, method, authReq = true, body = {}) {
       url
     }
   }
-  console.log('------------------', obj);
+  // console.log('------------------', obj);
   // if (authReq) {
   //   return ({
   //     ...obj,

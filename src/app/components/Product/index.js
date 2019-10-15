@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 const Product = (props) => {
-    console.log('product details', props)
+    // console.log('product details', props)
   if (props) {
   return (
     <div>

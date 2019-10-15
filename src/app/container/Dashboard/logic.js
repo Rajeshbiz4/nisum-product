@@ -44,7 +44,7 @@ export const productEpic = action$ => action$
 export function productReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case PRODUCTS: {
-      console.log('PRODUCTS', action);
+      // console.log('PRODUCTS', action);
       return {
         ...state,
         data: data,
@@ -64,7 +64,7 @@ export function productReducer(state = INITIAL_STATE, action) {
       }
     }
     case PRODUCTS_FAILURE: {
-      console.log('PRODUCTS_FAILURE', action);
+      // console.log('PRODUCTS_FAILURE', action);
       return {
         ...state,
         data: data,
