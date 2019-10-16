@@ -1,33 +1,33 @@
-import { Observable } from 'rxjs/Observable'
-import { ajax as staticAjax } from 'rxjs/observable/dom/ajax'
-import 'rxjs/add/operator/mergeMap'
-import 'rxjs/add/operator/map'
-import 'rxjs/add/operator/catch'
-import 'rxjs/add/observable/of'
-import { apiCall, apiCallFetch } from '../../utils'
-import { data } from '../../utils/data'
-export const ERROR = 'ERROR'
+import { Observable } from 'rxjs/Observable';
+import { ajax as staticAjax } from 'rxjs/observable/dom/ajax';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
+import { apiCallFetch } from '../../utils';
+import { data } from '../../utils/data';
+export const ERROR = 'ERROR';
 
-const PRODUCTS = 'PRODUCTS'
-export const PRODUCTS_SUCCESS = 'PRODUCTS_SUCCESS'
-const PRODUCTS_FAILURE = 'PRODUCTS_FAILURE'
+const PRODUCTS = 'PRODUCTS';
+export const PRODUCTS_SUCCESS = 'PRODUCTS_SUCCESS';
+const PRODUCTS_FAILURE = 'PRODUCTS_FAILURE';
 
 const INITIAL_STATE = {
   data: [],
   loading: false,
   error: false,
   flag:false
-}
+};
 
 export const fetchProductAction = payload => ({
   type: PRODUCTS,
   payload
-})
+});
 
 const productsSuccess = payload => ({
   type: PRODUCTS_SUCCESS,
   payload
-})
+});
 
 export const productEpic = action$ => action$
   .ofType(PRODUCTS)
@@ -44,7 +44,6 @@ export const productEpic = action$ => action$
 export function productReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case PRODUCTS: {
-      // console.log('PRODUCTS', action);
       return {
         ...state,
         data: data,
@@ -54,7 +53,6 @@ export function productReducer(state = INITIAL_STATE, action) {
       }
     }
     case PRODUCTS_SUCCESS: {
-      console.log('PRODUCTS_SUCCESS', action);
       return {
         ...state,
         data: data,
@@ -64,7 +62,6 @@ export function productReducer(state = INITIAL_STATE, action) {
       }
     }
     case PRODUCTS_FAILURE: {
-      // console.log('PRODUCTS_FAILURE', action);
       return {
         ...state,
         data: data,

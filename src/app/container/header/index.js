@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import 'react-dropdown/style.css'
+import React, { Component } from 'react';
+import 'react-dropdown/style.css';
 import { withRouter } from "react-router-dom";
 
 class Header extends Component {
   constructor(){
       super();
       this.state = {};
-  }
+  };
 
   render() {
     return (
@@ -19,8 +19,7 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {}
+Header.propTypes = {};
+Header.defaultProps = {};
 
-Header.defaultProps = {}
-
-export default withRouter(Header)
+export default withRouter(Header);

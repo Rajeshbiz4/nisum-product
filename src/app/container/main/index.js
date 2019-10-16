@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Header from '../header'
-import DashBoard from '../Dashboard'
+import React, { Component } from 'react';
+import Header from '../header';
+import DashBoard from '../Dashboard';
 
 class Main extends Component {
 
@@ -14,8 +14,7 @@ class Main extends Component {
   }
 }
 
-Main.propTypes = {}
+Main.propTypes = {};
+Main.defaultProps = {};
 
-Main.defaultProps = {}
-
-export default Main
+export default Main;

@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import { fetchProductAction } from './logic'
 import { Loader, Product,Popup } from '../../components'
 
-
 class DashBoard extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +16,6 @@ class DashBoard extends Component {
   }
 
   togglePopup = (item) => {
-    // console.log('item', item);
     this.setState({  
          currentItem: item
     }, () => {
@@ -25,10 +23,9 @@ class DashBoard extends Component {
         showPopup: !this.state.showPopup 
       })
     });  
-     }  
+   }  
 
   renderList() {
-    console.log(this.props.products.data.groups)
     if (this.props.products && this.props.products.data && this.props.products.data.groups && this.props.products.data.groups.length) {
       return this.props.products.data.groups.map((item, index) => (
         <div className="column" onClick={() => this.togglePopup(item)}>
@@ -36,8 +33,9 @@ class DashBoard extends Component {
         </div>
       ))
     }
-    return null
+    return null;
   }
+
   render() {
     return (
       <div class="wrapper">
